@@ -1,0 +1,11 @@
+C:\Users\netbook\source\repos\Internacion\Internacion\bin\Debug\netcoreapp2.2\Internacion.deps.json
+C:\Users\netbook\source\repos\Internacion\Internacion\bin\Debug\netcoreapp2.2\Internacion.runtimeconfig.json
+C:\Users\netbook\source\repos\Internacion\Internacion\bin\Debug\netcoreapp2.2\Internacion.runtimeconfig.dev.json
+C:\Users\netbook\source\repos\Internacion\Internacion\bin\Debug\netcoreapp2.2\Internacion.dll
+C:\Users\netbook\source\repos\Internacion\Internacion\obj\Debug\netcoreapp2.2\Internacion.csprojAssemblyReference.cache
+C:\Users\netbook\source\repos\Internacion\Internacion\obj\Debug\netcoreapp2.2\Internacion.csproj.CoreCompileInputs.cache
+C:\Users\netbook\source\repos\Internacion\Internacion\obj\Debug\netcoreapp2.2\Internacion.AssemblyInfoInputs.cache
+C:\Users\netbook\source\repos\Internacion\Internacion\obj\Debug\netcoreapp2.2\Internacion.AssemblyInfo.cs
+C:\Users\netbook\source\repos\Internacion\Internacion\bin\Debug\netcoreapp2.2\Internacion.pdb
+C:\Users\netbook\source\repos\Internacion\Internacion\obj\Debug\netcoreapp2.2\Internacion.dll
+C:\Users\netbook\source\repos\Internacion\Internacion\obj\Debug\netcoreapp2.2\Internacion.pdb

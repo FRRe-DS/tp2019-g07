@@ -1,0 +1,11 @@
+C:\Users\salva\source\repos\CapaAccesoAntecedentes\CapaAccesoAntecedentes\bin\Debug\netcoreapp2.1\CapaAccesoAntecedentes.deps.json
+C:\Users\salva\source\repos\CapaAccesoAntecedentes\CapaAccesoAntecedentes\bin\Debug\netcoreapp2.1\CapaAccesoAntecedentes.runtimeconfig.json
+C:\Users\salva\source\repos\CapaAccesoAntecedentes\CapaAccesoAntecedentes\bin\Debug\netcoreapp2.1\CapaAccesoAntecedentes.runtimeconfig.dev.json
+C:\Users\salva\source\repos\CapaAccesoAntecedentes\CapaAccesoAntecedentes\bin\Debug\netcoreapp2.1\CapaAccesoAntecedentes.dll
+C:\Users\salva\source\repos\CapaAccesoAntecedentes\CapaAccesoAntecedentes\bin\Debug\netcoreapp2.1\CapaAccesoAntecedentes.pdb
+C:\Users\salva\source\repos\CapaAccesoAntecedentes\CapaAccesoAntecedentes\obj\Debug\netcoreapp2.1\CapaAccesoAntecedentes.csprojAssemblyReference.cache
+C:\Users\salva\source\repos\CapaAccesoAntecedentes\CapaAccesoAntecedentes\obj\Debug\netcoreapp2.1\CapaAccesoAntecedentes.csproj.CoreCompileInputs.cache
+C:\Users\salva\source\repos\CapaAccesoAntecedentes\CapaAccesoAntecedentes\obj\Debug\netcoreapp2.1\CapaAccesoAntecedentes.AssemblyInfoInputs.cache
+C:\Users\salva\source\repos\CapaAccesoAntecedentes\CapaAccesoAntecedentes\obj\Debug\netcoreapp2.1\CapaAccesoAntecedentes.AssemblyInfo.cs
+C:\Users\salva\source\repos\CapaAccesoAntecedentes\CapaAccesoAntecedentes\obj\Debug\netcoreapp2.1\CapaAccesoAntecedentes.dll
+C:\Users\salva\source\repos\CapaAccesoAntecedentes\CapaAccesoAntecedentes\obj\Debug\netcoreapp2.1\CapaAccesoAntecedentes.pdb
