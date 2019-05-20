@@ -1,62 +1,108 @@
 package com.utn.frre.cs.examen.receta.spring.receta.examen.servicio;
 
-import java.util.ArrayList;
-import java.util.List;
+
+import java.util.Optional;
+
+import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.utn.frre.cs.examen.receta.spring.receta.examen.entidad.TramiteExamen;
 import com.utn.frre.cs.examen.receta.spring.receta.examen.repositorio.TramiteExamenSpringDataRepositorio;
 
 /**
- * servicio que implementa las operaciones basicas get,insert,delete,update para
+ * RestController que implementa las operaciones basicas get,insert,delete,update para
  * <code>TramiteExamen</code>. cableo con TramiteExamenSpringDataRepositorio
  * para ayudarme a definir el comportamiento mas adecuado para esta clase
+ * 
+ * ("Conjunto de operaciones para Buscar, Crear, Actualizar y Eliminar TramiteExamen")
  * 
  * @author Gonza
  * @version 1.0
  */
-@Service
-public class TramiteExamenServicio implements ITramiteExamenServicio {
+@RestController
+@RequestMapping("/api/examen/solicitud")
+public class TramiteExamenServicio  {
 
 	// Dependencies -----------------------------------------------------------
 
-	@Autowired
-	private TramiteExamenSpringDataRepositorio tramiteExamenRepositorio;
+		@Autowired
+		private TramiteExamenSpringDataRepositorio tramiteExamenRepositorio;
 
-	// Operation --------------------------------------------------------------
-
-	@Override
-	public synchronized boolean addTramiteExamen(TramiteExamen tramiteExamen) {
-		tramiteExamenRepositorio.save(tramiteExamen);
-		return true;
-
+		// Operation --------------------------------------------------------------
+		
+		
+		/**
+		 * retorna una todas las TramiteExamen que tiene  la BD
+		 * 
+		 */
+		@GetMapping()
+		public Page<TramiteExamen> getPage(Pageable pageable) {
+			return tramiteExamenRepositorio.findAll(pageable);
+		}
+		
+		/**
+		 * retorna un TramiteExamen segun su id
+		 * 
+		 */
+		@GetMapping("/{id}")
+		public ResponseEntity<TramiteExamen> findById(@PathVariable Long id) {
+			Optional<TramiteExamen> opt = tramiteExamenRepositorio.findById(id);
+			if (opt.isPresent())
+				return ResponseEntity.ok(opt.get());
+			return ResponseEntity.notFound().build();
+		}
+		
+		/**
+		 * crea un TramiteExamen 
+		 * 
+		 */
+		@PostMapping()
+		public ResponseEntity<TramiteExamen> create(@Valid @RequestBody TramiteExamen createRequest){
+			return ResponseEntity.ok(tramiteExamenRepositorio.save(createRequest));
+		}
+		
+		/**
+		 * actualiza un TramiteExamen
+		 * 
+		 */
+		
+		@PutMapping()
+		public ResponseEntity<TramiteExamen> update(@Valid @RequestBody TramiteExamen updateRequest) {
+			boolean exists = tramiteExamenRepositorio.existsById(updateRequest.getIdeSolicitudExamen());
+			if (exists) {
+				return ResponseEntity.ok(tramiteExamenRepositorio.save(updateRequest));
+			}
+			return ResponseEntity.notFound().build();
+		}
+		
+		/**
+		 * borra un TramiteExamen segun un id 
+		 * 
+		 */
+		@DeleteMapping("/{id}")
+		public ResponseEntity<?> delete(@PathVariable Long id) {
+			Optional<TramiteExamen> opt = tramiteExamenRepositorio.findById(id);
+			if (opt.isPresent()) {
+				tramiteExamenRepositorio.delete(opt.get());
+				return ResponseEntity.ok().build();
+			}
+			return ResponseEntity.notFound().build();
+		}
+		
+		
+		
+		
 	}
 
-	@Override
-	public TramiteExamen getTramiteExamen(long tramiteExamen_id) {
-		TramiteExamen obj = tramiteExamenRepositorio.findById(tramiteExamen_id).get();
-		return obj;
-	}
-
-	@Override
-	public void updateTramiteExamen(TramiteExamen tramiteExamen) {
-		tramiteExamenRepositorio.save(tramiteExamen);
-
-	}
-
-	@Override
-	public void deleteTramiteExamen(int tramiteExamen_id) {
-		tramiteExamenRepositorio.delete(getTramiteExamen(tramiteExamen_id));
-
-	}
-
-	@Override
-	public List<TramiteExamen> getAllTramiteExamen() {
-		List<TramiteExamen> list = new ArrayList<>();
-		tramiteExamenRepositorio.findAll().forEach(e -> list.add(e));
-		return list;
-	}
-
-}

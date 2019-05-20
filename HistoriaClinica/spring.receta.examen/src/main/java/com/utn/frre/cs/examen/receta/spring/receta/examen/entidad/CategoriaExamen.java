@@ -10,6 +10,8 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 /**
  * Categoria examen: Representa la categoria a la que puede pertenecer un examen
  * 
@@ -39,10 +41,12 @@ public class CategoriaExamen {
 	/**
 	 * Conjunto de estudios que pertenecen a esta categoria de examen
 	 */
-
+	@JsonIgnore
 	@OneToMany(mappedBy = "categoriaExamen")
 	private Set<CategoriaDatosExamen> categoriaDatosExamen;
 
+	
+	
 	/**
 	 * Constructor por defecto de CategoriaExamen
 	 */
@@ -50,65 +54,60 @@ public class CategoriaExamen {
 	public CategoriaExamen() {
 
 	}
-
+	
 	/**
-	 * Constructor necesario para realizar un insert (id se autogenera)
+	 * Constructor  de CategoriaExamen para un update particular
 	 */
 
-	public CategoriaExamen(String descripcionExamen) {
-		super();
-		this.descripcionExamen = descripcionExamen;
-	}
-
-	/**
-	 * Constructor necesario para realizar un update
-	 */
-
-	public CategoriaExamen(Long cod_examen, String descripcionExamen) {
+	public CategoriaExamen(Long cod_examen, String descripcionExamen, Set<CategoriaDatosExamen> categoriaDatosExamen) {
 		super();
 		this.cod_examen = cod_examen;
 		this.descripcionExamen = descripcionExamen;
+		this.categoriaDatosExamen = categoriaDatosExamen;
+	}
+	
+	/**
+	 * Constructor   de CategoriaExamen para in insert particular
+	 */
+
+	public CategoriaExamen(String descripcionExamen, Set<CategoriaDatosExamen> categoriaDatosExamen) {
+		super();
+		this.descripcionExamen = descripcionExamen;
+		this.categoriaDatosExamen = categoriaDatosExamen;
 	}
 
-	// Getters/Setters --------------------------------------------------------
-
-	public Set<CategoriaDatosExamen> getCatDatosExamen() {
-		return categoriaDatosExamen;
-	}
-
-	public void setCatDatosExamen(Set<CategoriaDatosExamen> catDatosExamen) {
-		this.categoriaDatosExamen = catDatosExamen;
-	}
+	//Getters y Setters--------------------------------------------------------------
 
 	public Long getCod_examen() {
 		return cod_examen;
 	}
 
+
 	public void setCod_examen(Long cod_examen) {
 		this.cod_examen = cod_examen;
 	}
+
 
 	public String getDescripcionExamen() {
 		return descripcionExamen;
 	}
 
+
 	public void setDescripcionExamen(String descripcionExamen) {
 		this.descripcionExamen = descripcionExamen;
 	}
 
+
+	public Set<CategoriaDatosExamen> getCategoriaDatosExamen() {
+		return categoriaDatosExamen;
+	}
 	
-	// metodo ToString para poder ver el resultado en la consola y hacer pruebas
-	@Override
-	public String toString() {
-		return "CategoriaExamen [cod_examen=" + cod_examen + ", descripcionExamen=" + descripcionExamen + "]";
+
+	public void setCategoriaDatosExamen(Set<CategoriaDatosExamen> categoriaDatosExamen) {
+		this.categoriaDatosExamen = categoriaDatosExamen;
 	}
 
-	
-	
 
-
+	 
 	
-
-	
-
 }

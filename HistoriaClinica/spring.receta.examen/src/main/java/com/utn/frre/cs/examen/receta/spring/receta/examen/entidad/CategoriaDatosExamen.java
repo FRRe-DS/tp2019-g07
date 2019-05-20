@@ -12,16 +12,18 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 /**
  * CategoriaDatoExamen: Representa un estudio particular sobre un determinado
- * tipo/Categoria de Examen
+ * categoria  de Examen
  * 
  * @author Gonza
  * @version 1.0
  */
 
 @Entity
-@Table(name = "Categoria_Datos_Examen")
+@Table(name = "Tipo_Examen_Estudio")
 public class CategoriaDatosExamen {
 
 	/**
@@ -36,7 +38,7 @@ public class CategoriaDatosExamen {
 	/**
 	 * Es la categoria de examen a la que pertenece este estudio particular
 	 */
-
+	
 	@ManyToOne
 	@JoinColumn(name = "cod_examen", nullable = false)
 	private CategoriaExamen categoriaExamen;
@@ -51,6 +53,7 @@ public class CategoriaDatosExamen {
 	 * Representa que un estudio puede haber sido solicitado en diferentes solicitudes de examen 
 	 * 
 	 */
+	@JsonIgnore
 	@OneToMany(mappedBy = "categoriaDatoExamen")
 	private Set<TramiteExamenDatoLinea> tramiteExamenDatoLinea;
 
@@ -117,17 +120,6 @@ public class CategoriaDatosExamen {
 		this.descripcionDato = descripcionDato;
 	}
 
-	
-	// metodo ToString para poder ver el resultado en la consola y hacer pruebas
-	
-	@Override
-	public String toString() {
-		return "CategoriaDatosExamen [cod_dato=" + cod_dato + ", categoriaExamen=" + categoriaExamen
-				+ ", descripcionDato=" + descripcionDato + "]";
-	}
-
-	
-	
 	
 	
 

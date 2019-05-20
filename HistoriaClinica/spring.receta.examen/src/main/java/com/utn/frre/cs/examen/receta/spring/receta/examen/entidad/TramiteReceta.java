@@ -10,9 +10,9 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 /**
- * TramiteReceta: Representa el medicamento/s dado a un paciente en una
- * internacion en particular solicitada por un deteminado medico/s que
- * atendieron su caso. Probablemente necesite mas informacion de la del grupo de
+ * TramiteReceta: Representa el medicamento/s dado  en una
+ * internacion en particular solicitada por un deteminado medico/s . 
+ * Probablemente necesite mas informacion de la del grupo de
  * medicamentos para mostrar o hacer alguna validacion.
  * 
  * @author Gonza
@@ -26,9 +26,9 @@ public class TramiteReceta {
 	/**
 	 * Es el id que identifica a una tramite receta univocamente.
 	 */
-
+    
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "IDE_RECETA")
 	private Long ide_receta;
 
@@ -64,10 +64,7 @@ public class TramiteReceta {
 	 */
 	private int id_internacion;
 
-	/**
-	 * Representa al paciente al cual este tramite de receta se refiere
-	 */
-	private int ide_expediente;
+	
 
 	/**
 	 * Constructor por defecto de la clase TramiteReceta
@@ -80,7 +77,7 @@ public class TramiteReceta {
 	 * Constructor de la clase TramiteReceta necesario para un insert
 	 */
 	public TramiteReceta(int ide_personal_med, int ide_presentacion_med, int ide_med, Date fecha_inicio_med,
-			String descripcionDosis, int id_internacion, int ide_expediente) {
+			String descripcionDosis, int id_internacion) {
 		super();
 		this.ide_personal_med = ide_personal_med;
 		this.ide_presentacion_med = ide_presentacion_med;
@@ -88,14 +85,14 @@ public class TramiteReceta {
 		this.fecha_inicio_med = fecha_inicio_med;
 		this.descripcionDosis = descripcionDosis;
 		this.id_internacion = id_internacion;
-		this.ide_expediente = ide_expediente;
+		
 	}
 
 	/**
 	 * Constructor de la clase TramiteReceta necesario para un update
 	 */
 	public TramiteReceta(Long ide_receta, int ide_personal_med, int ide_presentacion_med, int ide_med,
-			Date fecha_inicio_med, String descripcionDosis, int id_internacion, int ide_expediente) {
+			Date fecha_inicio_med, String descripcionDosis, int id_internacion) {
 		super();
 		this.ide_receta = ide_receta;
 		this.ide_personal_med = ide_personal_med;
@@ -104,7 +101,7 @@ public class TramiteReceta {
 		this.fecha_inicio_med = fecha_inicio_med;
 		this.descripcionDosis = descripcionDosis;
 		this.id_internacion = id_internacion;
-		this.ide_expediente = ide_expediente;
+		
 	}
 
 	// Getters y Setters------------------------------------------------
@@ -165,20 +162,8 @@ public class TramiteReceta {
 		this.id_internacion = id_internacion;
 	}
 
-	public int getIde_expediente() {
-		return ide_expediente;
-	}
+	
 
-	public void setIde_expediente(int ide_expediente) {
-		this.ide_expediente = ide_expediente;
-	}
-
-	// // metodo ToString para poder ver el resultado en la consola y hacer pruebas
-	@Override
-	public String toString() {
-		return "\nTramiteReceta [ide_receta=" + ide_receta + ", ide_personal_med=" + ide_personal_med
-				+ ", fecha_inicio_med=" + fecha_inicio_med + ", descripcionDosis=" + descripcionDosis
-				+ ", id_internacion=" + id_internacion + ", ide_expediente=" + ide_expediente + "]";
-	}
+	
 
 }

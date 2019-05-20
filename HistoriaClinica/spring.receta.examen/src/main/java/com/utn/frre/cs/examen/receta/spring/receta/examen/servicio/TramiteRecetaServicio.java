@@ -1,62 +1,106 @@
 package com.utn.frre.cs.examen.receta.spring.receta.examen.servicio;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Optional;
+
+import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.utn.frre.cs.examen.receta.spring.receta.examen.entidad.TramiteReceta;
 import com.utn.frre.cs.examen.receta.spring.receta.examen.repositorio.TramiteRecetaSpringDataRepositorio;
 
 /**
- * servicio que implementa las operaciones basicas get,insert,delete,update para
+ * RestController que implementa las operaciones basicas get,insert,delete,update para
  * <code>TramiteReceta</code>. cableo con TramiteRecetaSpringDataRepositorio
  * para ayudarme a definir el comportamiento mas adecuado para esta clase
+ * 
+ * ("Conjunto de operaciones para Buscar, Crear, Actualizar y Eliminar TramiteReceta")
  * 
  * @author Gonza
  * @version 1.0
  */
-@Service
-public class TramiteRecetaServicio implements ITramiteRecetaServicio {
+@RestController
+@RequestMapping("/api/examen/informacionReceta")
+public class TramiteRecetaServicio  {
 
 	// Dependencies -----------------------------------------------------------
 
-	@Autowired
-	private TramiteRecetaSpringDataRepositorio tramiteRecetaRepositorio;
+			@Autowired
+			private TramiteRecetaSpringDataRepositorio tramiteRecetaRepositorio;
 
-	// Operation --------------------------------------------------------------
+			// Operation --------------------------------------------------------------
+			
 
-	@Override
-	public synchronized boolean addTramiteReceta(TramiteReceta tramiteReceta) {
-		tramiteRecetaRepositorio.save(tramiteReceta);
-		return true;
-
-	}
-
-	@Override
-	public TramiteReceta getTramiteReceta(long tramiteReceta_id) {
-		TramiteReceta obj = tramiteRecetaRepositorio.findById(tramiteReceta_id).get();
-		return obj;
-	}
-
-	@Override
-	public void updateTramiteReceta(TramiteReceta tramiteReceta) {
-		tramiteRecetaRepositorio.save(tramiteReceta);
-
-	}
-
-	@Override
-	public void deleteTramiteReceta(int tramiteReceta_id) {
-		tramiteRecetaRepositorio.delete(getTramiteReceta(tramiteReceta_id));
-
-	}
-
-	@Override
-	public List<TramiteReceta> getAllTramiteReceta() {
-		List<TramiteReceta> list = new ArrayList<>();
-		tramiteRecetaRepositorio.findAll().forEach(e -> list.add(e));
-		return list;
-	}
-
-}
+			/**
+			 * retorna una todas las TramiteReceta que tiene  la BD
+			 * 
+			 */
+			@GetMapping()
+			public Page<TramiteReceta> getPage(Pageable pageable) {
+				return tramiteRecetaRepositorio.findAll(pageable);
+			}
+			
+			/**
+			 * retorna un TramiteReceta segun su id
+			 * 
+			 */
+			@GetMapping("/{id}")
+			public ResponseEntity<TramiteReceta> findById(@PathVariable Long id) {
+				Optional<TramiteReceta> opt = tramiteRecetaRepositorio.findById(id);
+				if (opt.isPresent())
+					return ResponseEntity.ok(opt.get());
+				return ResponseEntity.notFound().build();
+			}
+			
+			/**
+			 * crea un TramiteReceta 
+			 * 
+			 */
+			@PostMapping()
+			public ResponseEntity<TramiteReceta> create(@Valid @RequestBody TramiteReceta createRequest){
+				return ResponseEntity.ok(tramiteRecetaRepositorio.save(createRequest));
+			}
+			
+			/**
+			 * actualiza un TramiteReceta
+			 * 
+			 */
+			
+			@PutMapping()
+			public ResponseEntity<TramiteReceta> update(@Valid @RequestBody TramiteReceta updateRequest) {
+				boolean exists = tramiteRecetaRepositorio.existsById(updateRequest.getIde_receta());
+				if (exists) {
+					return ResponseEntity.ok(tramiteRecetaRepositorio.save(updateRequest));
+				}
+				return ResponseEntity.notFound().build();
+			}
+			
+			/**
+			 * borra un TramiteReceta segun un id 
+			 * 
+			 */
+			@DeleteMapping("/{id}")
+			public ResponseEntity<?> delete(@PathVariable Long id) {
+				Optional<TramiteReceta> opt = tramiteRecetaRepositorio.findById(id);
+				if (opt.isPresent()) {
+					tramiteRecetaRepositorio.delete(opt.get());
+					return ResponseEntity.ok().build();
+				}
+				return ResponseEntity.notFound().build();
+			}
+			
+			
+			
+			
+		}
