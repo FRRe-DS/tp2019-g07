@@ -1,0 +1,111 @@
+{
+	"variables": [],
+	"info": {
+		"name": "CRUD de TramiteReceta",
+		"_postman_id": "1fdeb289-6505-c37b-8112-1338c09c3c07",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "findAll los Tramite de receta  de la BD",
+			"request": {
+				"url": "localhost:8080/api/examen/informacionReceta",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"cod_dato\": 67,\n    \"categoriaExamen\": {\n        \"cod_examen\": 101,\n        \"descripcionExamen\": \"Categoria de examen: Cardiovascular\"\n    },\n    \"descripcionDato\": \"examen: arritmia y soplo \"\n}"
+				},
+				"description": "findAll tramiteRecetas que se encuetran en la BD"
+			},
+			"response": []
+		},
+		{
+			"name": "findById los Tramite de receta  de la BD",
+			"request": {
+				"url": "localhost:8080/api/examen/informacionReceta/1001",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"cod_dato\": 67,\n    \"categoriaExamen\": {\n        \"cod_examen\": 101,\n        \"descripcionExamen\": \"Categoria de examen: Cardiovascular\"\n    },\n    \"descripcionDato\": \"examen: arritmia y soplo \"\n}"
+				},
+				"description": "findById un tramiteReceta  que se encuetran en la BD"
+			},
+			"response": []
+		},
+		{
+			"name": "update un Tramite de receta  de la BD",
+			"request": {
+				"url": "localhost:8080/api/examen/informacionReceta",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"ide_receta\": 1001,\n    \"ide_personal_med\": 300,\n    \"ide_presentacion_med\": 3,\n    \"ide_med\": 552,\n    \"fecha_inicio_med\": \"2019-05-20T03:00:00.000+0000\",\n    \"descripcionDosis\": \"cada 72 horas\",\n    \"id_internacion\": 10\n}"
+				},
+				"description": "actualiza  un tramiteReceta  que se encuetran en la BD"
+			},
+			"response": []
+		},
+		{
+			"name": "create un Tramite de receta  en la BD",
+			"request": {
+				"url": "localhost:8080/api/examen/informacionReceta",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \n    \"ide_personal_med\": 305,\n    \"ide_presentacion_med\": 2,\n    \"ide_med\": 551,\n    \"fecha_inicio_med\": \"2019-05-20\",\n    \"descripcionDosis\": \"cada 1 horas\",\n    \"id_internacion\": 11\n}\n"
+				},
+				"description": "crea  un nuevo tramiteReceta   en la BD"
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteById un Tramite de receta  de la BD",
+			"request": {
+				"url": "localhost:8080/api/examen/informacionReceta/1",
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \n    \"ide_personal_med\": 305,\n    \"ide_presentacion_med\": 2,\n    \"ide_med\": 551,\n    \"fecha_inicio_med\": \"2019-05-20\",\n    \"descripcionDosis\": \"cada 1 horas\",\n    \"id_internacion\": 11\n}\n"
+				},
+				"description": "borra  un nuevo tramiteReceta   de la BD"
+			},
+			"response": []
+		}
+	]
+}
