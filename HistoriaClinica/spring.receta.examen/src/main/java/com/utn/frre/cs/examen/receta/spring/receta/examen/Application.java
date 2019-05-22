@@ -4,11 +4,14 @@ package com.utn.frre.cs.examen.receta.spring.receta.examen;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import springfox.documentation.swagger2.annotations.EnableSwagger2;
+
 
 
 
 
 @SpringBootApplication
+
 public class Application  {
 
 	

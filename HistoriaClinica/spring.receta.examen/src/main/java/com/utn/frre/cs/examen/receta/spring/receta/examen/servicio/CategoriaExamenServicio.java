@@ -32,7 +32,7 @@ import com.utn.frre.cs.examen.receta.spring.receta.examen.repositorio.CategoriaE
  * @version 1.0
  */
 @RestController
-@RequestMapping("/api/examen/categoriaExamen")
+@RequestMapping("/categoriaExamen")
 public class CategoriaExamenServicio  {
 
 	// Dependencies -----------------------------------------------------------

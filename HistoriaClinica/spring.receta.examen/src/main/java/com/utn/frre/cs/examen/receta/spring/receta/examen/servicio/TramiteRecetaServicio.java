@@ -31,7 +31,7 @@ import com.utn.frre.cs.examen.receta.spring.receta.examen.repositorio.TramiteRec
  * @version 1.0
  */
 @RestController
-@RequestMapping("/api/examen/informacionReceta")
+@RequestMapping("/informacionReceta")
 public class TramiteRecetaServicio  {
 
 	// Dependencies -----------------------------------------------------------
