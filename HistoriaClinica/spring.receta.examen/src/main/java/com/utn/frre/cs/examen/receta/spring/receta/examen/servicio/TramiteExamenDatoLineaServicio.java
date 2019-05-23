@@ -1,6 +1,7 @@
 package com.utn.frre.cs.examen.receta.spring.receta.examen.servicio;
 
 import java.util.Optional;
+import java.util.Set;
 
 import javax.validation.Valid;
 
@@ -17,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.utn.frre.cs.examen.receta.spring.receta.examen.entidad.TramiteExamen;
 import com.utn.frre.cs.examen.receta.spring.receta.examen.entidad.TramiteExamenDatoLinea;
 import com.utn.frre.cs.examen.receta.spring.receta.examen.repositorio.TramiteExamenDatoLineaSpringDataRepositorio;
 
@@ -33,7 +35,7 @@ import com.utn.frre.cs.examen.receta.spring.receta.examen.repositorio.TramiteExa
  * @version 1.0
  */
 @RestController
-@RequestMapping("/estudiosSolicitados")
+@RequestMapping("/api/examen/estudioSolicitado")
 public class TramiteExamenDatoLineaServicio {
 
 	// Dependencias -----------------------------------------------------------
@@ -101,6 +103,8 @@ public class TramiteExamenDatoLineaServicio {
 				}
 				return ResponseEntity.notFound().build();
 			}
+			
+			
 			
 			
 			
