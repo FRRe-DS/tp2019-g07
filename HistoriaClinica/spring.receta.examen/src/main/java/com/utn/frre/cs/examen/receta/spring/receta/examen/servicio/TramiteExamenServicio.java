@@ -28,6 +28,7 @@ import com.utn.frre.cs.examen.receta.spring.receta.examen.entidad.TramiteExamen;
 import com.utn.frre.cs.examen.receta.spring.receta.examen.entidad.TramiteExamenDatoLinea;
 import com.utn.frre.cs.examen.receta.spring.receta.examen.repositorio.TramiteExamenDatoLineaSpringDataRepositorio;
 import com.utn.frre.cs.examen.receta.spring.receta.examen.repositorio.TramiteExamenSpringDataRepositorio;
+import com.utn.frre.cs.examen.receta.spring.receta.examen.servicio.excepcion.TramiteNoEncontradoExcepcion;
 
 /**
  * RestController que implementa las operaciones basicas get,insert,delete,update para
@@ -40,7 +41,7 @@ import com.utn.frre.cs.examen.receta.spring.receta.examen.repositorio.TramiteExa
  * @version 1.0
  */
 @RestController
-@RequestMapping("/api/examen/solicitud/")
+@RequestMapping("/api/examen/solicitud")
 public class TramiteExamenServicio  {
 
 	// Dependencies -----------------------------------------------------------
@@ -115,14 +116,14 @@ public class TramiteExamenServicio  {
 		
 		/**
 		 * retorna  los estudios asociados a partir de un TramiteExamen
-		 * @throws Exception 
+		 *  
 		 * 
 		 */
 		@GetMapping("/{id}/estudiosSolicitados")
-		public Set<TramiteExamenDatoLinea> recuperarEstudios(@PathVariable Long id) throws Exception {
+		public Set<TramiteExamenDatoLinea> recuperarEstudios(@PathVariable Long id)  {
 			Optional<TramiteExamen> opt = tramiteExamenRepositorio.findById(id);
 			if (!opt.isPresent()) {
-				throw new Exception("id" + id); //seguir mirando este tema para tirar una linda excepcion al menos
+				throw new TramiteNoEncontradoExcepcion("id-" + id); //seguir mirando este tema para tirar una linda excepcion al menos
 			}
 			return  opt.get().getTramiteExamenDatoLineas();  
 		}
@@ -130,16 +131,16 @@ public class TramiteExamenServicio  {
 		/**
 		 * 
 		 * A partir de un TramiteExamen crea un estudio solicitado
-		 * @throws Exception 
+		 *  
 		 */
 		
 		@PostMapping("/{id}/nuevoEstudioSolicitado")
-		public ResponseEntity<Object> createEstudioSolicitado(@PathVariable Long id,@Valid @RequestBody TramiteExamenDatoLinea tramiteExamenDatoLinea) throws Exception{
+		public ResponseEntity<Object> createEstudioSolicitado(@PathVariable Long id,@Valid @RequestBody TramiteExamenDatoLinea tramiteExamenDatoLinea) {
 			 
 			Optional<TramiteExamen> opt = tramiteExamenRepositorio.findById(id);
 			
 			if (!opt.isPresent()) {
-				throw new Exception("id" + id); //seguir mirando tema Exception para tirar una linda excepcion al menos
+				return ResponseEntity.notFound().build();  
 			}
 			
 			TramiteExamen tramiteExamen = opt.get();
