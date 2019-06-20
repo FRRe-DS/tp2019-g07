@@ -1,0 +1,93 @@
+{
+	"variables": [],
+	"info": {
+		"name": "CRUD CategoriaExamen",
+		"_postman_id": "85a55f7b-e47c-642b-ba36-d3f8f0ccdf92",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "DeleteById una categoriaExamen  particular de la BD",
+			"request": {
+				"url": "localhost:8080/api/examen/categoriaExamen/109",
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"cod_examen\":109,\n\"descripcionExamen\":\"Categoria de examen: Cultivo\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "update una categoriaExamen en la BD",
+			"request": {
+				"url": "localhost:8080/api/examen/categoriaExamen",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"cod_examen\":109,\n\"descripcionExamen\":\"Categoria de examen: Cultivo\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "create una Categoria de examen en BD",
+			"request": {
+				"url": "localhost:8080/api/examen/categoriaExamen",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n \n\"descripcionExamen\":\"Categoria de examen: Patologico\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "findByID una categoriaExamen   de la BD",
+			"request": {
+				"url": "localhost:8080/api/examen/categoriaExamen/101",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "findAll las categoriaExamen  de la BD",
+			"request": {
+				"url": "localhost:8080/api/examen/categoriaExamen",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}

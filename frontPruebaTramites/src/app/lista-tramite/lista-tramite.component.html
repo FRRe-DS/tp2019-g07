@@ -1,0 +1,25 @@
+<h1>Tramites de Examenes Abiertos</h1>
+
+<div class="container"> 
+<table class="table">
+  <thead>
+      <tr>
+        <th>Id Tramite</th>
+        <th>Id Medico</th>
+        <th>Fecha Solicitud Examen</th>
+        <th>Id Internacion</th>
+        <th>Novedades</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let t of tramite">
+        <th>{{t.id}}</th>
+        <th>{{t.id_personal_med}}</th>
+        <th>{{t.fec_examen | date | uppercase}}</th>
+        <th>{{t.id_internacion}}</th>
+        <th>{{t.novedades}}</th>
+        <th>nuevo estudio |  detalles de estudios</th>
+      </tr>
+    </tbody>
+</table>
+</div>

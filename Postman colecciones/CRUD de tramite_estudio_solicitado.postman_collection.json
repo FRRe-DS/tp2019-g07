@@ -1,0 +1,111 @@
+{
+	"variables": [],
+	"info": {
+		"name": "CRUD de EstudiosSolicitados(TramiteExamenDatoLinea)",
+		"_postman_id": "bcb98a49-df87-e24c-317b-75ad22071c85",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "findAll los estudio solicitado de la BD",
+			"request": {
+				"url": "localhost:8080/api/examen/estudioSolicitado",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \n    \"ide_personal_med\": 305,\n    \"ide_presentacion_med\": 2,\n    \"ide_med\": 551,\n    \"fecha_inicio_med\": \"2019-05-20\",\n    \"descripcionDosis\": \"cada 1 horas\",\n    \"id_internacion\": 11\n}\n"
+				},
+				"description": "findAll los TramiteEstudioSolicitado que estan presentes en la BD"
+			},
+			"response": []
+		},
+		{
+			"name": "findByID una estudio solicitado de la BD",
+			"request": {
+				"url": "localhost:8080/api/examen/estudioSolicitado/800",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \n    \"ide_personal_med\": 305,\n    \"ide_presentacion_med\": 2,\n    \"ide_med\": 551,\n    \"fecha_inicio_med\": \"2019-05-20\",\n    \"descripcionDosis\": \"cada 1 horas\",\n    \"id_internacion\": 11\n}\n"
+				},
+				"description": "findAll los TramiteEstudioSolicitado que estan presentes en la BD"
+			},
+			"response": []
+		},
+		{
+			"name": "update  una estudio solicitado de la BD",
+			"request": {
+				"url": "localhost:8080/api/examen/estudioSolicitado",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"ide_TramiteExamenDatoLinea\": 800,\n    \"categoriaDatoExamen\": {\n        \"cod_dato\": 62,\n        \"categoriaExamen\": {\n            \"cod_examen\": 104,\n            \"descripcionExamen\": \"Categoria de examen: Sangre\"\n        },\n        \"descripcionDato\": \"examen: sangre estandar\"\n    },\n    \"tramiteExamen\": {\n        \"ideSolicitudExamen\": 1000,\n        \"idePersonalMed\": 300,\n        \"fecExamen\": \"2019-05-20T03:00:00.000+0000\",\n        \"id_internacion\": 10\n    },\n    \"resultadoExamen\": \"Valores Anormales:anemia\",\n    \"estadoEstudio\": \"listo\",\n    \"fechaEstudio\": \"2019-05-20T03:00:00.000+0000\"\n}\n"
+				},
+				"description": "update un TramiteEstudioSolicitado que esta presente  en la BD"
+			},
+			"response": []
+		},
+		{
+			"name": "create   una estudio solicitado de la BD",
+			"request": {
+				"url": "localhost:8080/api/examen/estudioSolicitado",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n     \n    \"categoriaDatoExamen\": {\n        \"cod_dato\": 62,\n        \"categoriaExamen\": {\n            \"cod_examen\": 104,\n            \"descripcionExamen\": \"Categoria de examen: Sangre\"\n        },\n        \"descripcionDato\": \"examen: sangre estandar\"\n    },\n    \"tramiteExamen\": {\n        \"ideSolicitudExamen\": 1000,\n        \"idePersonalMed\": 300,\n        \"fecExamen\": \"2019-05-20T03:00:00.000+0000\",\n        \"id_internacion\": 12\n    },\n     \n    \"estadoEstudio\": \"proceso\",\n    \"fechaEstudio\": \"2019-06-20T03:00:00.000+0000\"\n}\n"
+				},
+				"description": "actualiza un TramiteEstudioSolicitado que esta presente  en la BD"
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteById un  estudio solicitado de la BD",
+			"request": {
+				"url": "localhost:8080/api/examen/estudioSolicitado/800",
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n     \n    \"categoriaDatoExamen\": {\n        \"cod_dato\": 62,\n        \"categoriaExamen\": {\n            \"cod_examen\": 104,\n            \"descripcionExamen\": \"Categoria de examen: Sangre\"\n        },\n        \"descripcionDato\": \"examen: sangre estandar\"\n    },\n    \"tramiteExamen\": {\n        \"ideSolicitudExamen\": 1000,\n        \"idePersonalMed\": 300,\n        \"fecExamen\": \"2019-05-20T03:00:00.000+0000\",\n        \"id_internacion\": 12\n    },\n     \n    \"estadoEstudio\": \"proceso\",\n    \"fechaEstudio\": \"2019-06-20T03:00:00.000+0000\"\n}\n"
+				},
+				"description": "borra un TramiteEstudioSolicitado  que esta presente  en la BD segun un id"
+			},
+			"response": []
+		}
+	]
+}

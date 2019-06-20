@@ -1,0 +1,11 @@
+
+<H1>Inicio de Sesión</H1>
+<div class="container"> 
+    <div  class="alert alert-warning" *ngIf='sesionCheck'>{{mensajeError}}</div>
+    <div> 
+    Nombre de usuario    : <input type = "text" name="usuario"   [(ngModel)]="usuario" >
+    Contraseña : <input type = "password" name="password" [(ngModel)]="contrasena" >
+
+    <button (click)=manejarInicioSesion() class="btn btn-success">Iniciar Sesión</button>
+    </div>
+</div> 

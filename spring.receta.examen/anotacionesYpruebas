@@ -1,0 +1,111 @@
+package com.utn.frre.cs.examen.receta.spring.receta.examen;
+
+import java.util.HashMap;
+
+import javax.sql.DataSource;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Primary;
+import org.springframework.core.env.Environment;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+import org.springframework.jdbc.datasource.DriverManagerDataSource;
+import org.springframework.orm.jpa.JpaTransactionManager;
+import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
+import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
+import org.springframework.transaction.PlatformTransactionManager;
+import org.springframework.web.cors.CorsConfiguration;
+import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
+import org.springframework.web.filter.CorsFilter;
+
+
+
+/**
+ * Gracias profe
+ * 
+ * @author  gonza
+ * @version  1.0
+ */
+
+@Configuration
+@EnableJpaRepositories(
+		basePackages = "com.utn.frre.cs.examen.receta.spring.receta.examen.repositorio", 
+		entityManagerFactoryRef = "defaultEntityManagerFactory", 
+		transactionManagerRef = "defaultTransactionManager")
+
+public class AppConfig {
+
+	
+	@Autowired
+	private Environment env;
+	
+	private static final Logger LOGGER = LoggerFactory.getLogger(AppConfig.class);
+	
+	@Bean
+	@Primary
+	public LocalContainerEntityManagerFactoryBean defaultEntityManagerFactory() {
+		LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
+		em.setPersistenceUnitName("dacs-mu");
+		em.setDataSource(defaultDataSource());
+		em.setPackagesToScan(new String[] { "com.utn.frre.cs.examen.receta.spring.receta.examen.entidad" });
+
+		HibernateJpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
+		vendorAdapter.setShowSql(true);
+		em.setJpaVendorAdapter(vendorAdapter);
+		HashMap<String, Object> properties = new HashMap<>();
+		properties.put("hibernate.hbm2ddl.auto", "create-drop");   
+		properties.put("hibernate.dialect", "org.hibernate.dialect.MySQL8Dialect");
+		properties.put("hibernate.temp.use_jdbc_metadata_defaults", "false");
+		em.setJpaPropertyMap(properties);
+		return em;
+	}
+	
+	@Bean
+	@Primary
+	public DataSource defaultDataSource() {
+		LOGGER.info("User URL: " + env.getProperty("spring.datasource.url"));
+		LOGGER.info("User Username: " + env.getProperty("spring.datasource.username"));
+		LOGGER.info("User Password: " + env.getProperty("spring.datasource.password"));
+		
+		DriverManagerDataSource dataSource = new DriverManagerDataSource();
+		dataSource.setUrl(env.getProperty("spring.datasource.url"));
+		dataSource.setUsername(env.getProperty("spring.datasource.username"));
+		dataSource.setPassword(env.getProperty("spring.datasource.password"));
+		return dataSource;
+	}
+	
+	@Bean
+	@Primary
+	public PlatformTransactionManager defaultTransactionManager() {
+		JpaTransactionManager transactionManager = new JpaTransactionManager();
+		transactionManager.setEntityManagerFactory(defaultEntityManagerFactory().getObject());
+		return transactionManager;
+	}
+
+	
+	@Bean
+	public ModelMapper modelMapper() {
+		return new ModelMapper();
+	}
+ 
+    
+    @Bean
+    public CorsFilter swaggerCorsFilter() {
+        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+
+        // Allow anyone and anything access. Probably ok for Swagger spec
+        CorsConfiguration config = new CorsConfiguration();
+        config.setAllowCredentials(true);
+        config.addAllowedOrigin("*");
+        config.addAllowedHeader("*");
+        config.addAllowedMethod("*");
+
+        source.registerCorsConfiguration("/v2/api-docs", config);
+        return new CorsFilter(source);
+    }
+	 
+	
+}
