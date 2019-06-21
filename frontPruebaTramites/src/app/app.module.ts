@@ -4,13 +4,13 @@ import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { WelcomeComponent } from './welcome/welcome.component';
-import { LoginComponent } from './login/login.component';
-import { ErrorComponent } from './error/error.component';
-import { ListaTramiteComponent } from './lista-tramite/lista-tramite.component';
-import { MenuComponent } from './menu/menu.component';
-import { FooterComponent } from './footer/footer.component';
-import { TramiteComponent } from './tramite/tramite/tramite.component';
+import { WelcomeComponent } from './Componente/welcome/welcome.component';
+import { LoginComponent } from './Componente/login/login.component';
+import { ErrorComponent } from './Componente/error/error.component';
+import { ListaTramiteComponent } from './Componente/lista-tramite/lista-tramite.component';
+import { MenuComponent } from './Componente/menu/menu.component';
+import { FooterComponent } from './Componente/footer/footer.component';
+import { TramiteComponent } from './Componente/tramite/tramite.component';
 
 @NgModule({
   declarations: [

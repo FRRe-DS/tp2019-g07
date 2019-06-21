@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { LoginComponent } from './login/login.component';
-import { WelcomeComponent } from './welcome/welcome.component';
-import { ErrorComponent } from './error/error.component';
-import { ListaTramiteComponent } from './lista-tramite/lista-tramite.component';
-import { TramiteComponent } from './tramite/tramite/tramite.component';
+import { LoginComponent } from './Componente/login/login.component';
+import { WelcomeComponent } from './Componente/welcome/welcome.component';
+import { ErrorComponent } from './Componente/error/error.component';
+import { ListaTramiteComponent } from './Componente/lista-tramite/lista-tramite.component';
+import { TramiteComponent } from './Componente/tramite/tramite.component';
 
 
 // welcome
