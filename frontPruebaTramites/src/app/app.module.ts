@@ -7,10 +7,11 @@ import { AppComponent } from './app.component';
 import { WelcomeComponent } from './Componente/welcome/welcome.component';
 import { LoginComponent } from './Componente/login/login.component';
 import { ErrorComponent } from './Componente/error/error.component';
-import { ListaTramiteComponent } from './Componente/lista-tramite/lista-tramite.component';
 import { MenuComponent } from './Componente/menu/menu.component';
 import { FooterComponent } from './Componente/footer/footer.component';
 import { TramiteComponent } from './Componente/tramite/tramite.component';
+import { TramiteService } from './Servicio/tramite.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,6 @@ import { TramiteComponent } from './Componente/tramite/tramite.component';
     WelcomeComponent,
     LoginComponent,
     ErrorComponent,
-    ListaTramiteComponent,
     MenuComponent,
     FooterComponent,
     TramiteComponent
@@ -26,9 +26,10 @@ import { TramiteComponent } from './Componente/tramite/tramite.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [TramiteService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

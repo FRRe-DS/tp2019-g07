@@ -1,3 +1,22 @@
-<p>
-  tramite API works!
-</p>
+<h1>Tramites de Examenes Abiertos</h1>
+
+<div class="container"> 
+<table class="table">
+  <thead>
+      <tr>
+        <th>Id Tramite</th>
+        <th>Id Medico</th>
+        <th>Fecha Solicitud Examen</th>
+        <th>Id Internacion</th>
+       </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let t of tramites  ">
+         <th>{{t.ideSolicitudExamen}}</th>
+        <th>{{t.idePersonalMed}}</th>
+        <th>{{t.fecExamen | date:"dd/MM/yyyy HH:mm" | uppercase}}</th>
+        <th>{{t.id_internacion}}</th>
+     </tr>
+    </tbody>
+</table>
+</div>
