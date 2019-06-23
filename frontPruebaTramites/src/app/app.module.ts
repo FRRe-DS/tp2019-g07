@@ -12,6 +12,8 @@ import { FooterComponent } from './Componente/footer/footer.component';
 import { TramiteComponent } from './Componente/tramite/tramite.component';
 import { TramiteService } from './Servicio/tramite.service';
 import { HttpClientModule } from '@angular/common/http';
+import { EstudioComponent } from './Componente/estudio/estudio.component';
+import { EstudioService } from './Servicio/estudio.service';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,8 @@ import { HttpClientModule } from '@angular/common/http';
     ErrorComponent,
     MenuComponent,
     FooterComponent,
-    TramiteComponent
+    TramiteComponent,
+    EstudioComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +32,7 @@ import { HttpClientModule } from '@angular/common/http';
     FormsModule,
     HttpClientModule
   ],
-  providers: [TramiteService],
+  providers: [TramiteService, EstudioService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

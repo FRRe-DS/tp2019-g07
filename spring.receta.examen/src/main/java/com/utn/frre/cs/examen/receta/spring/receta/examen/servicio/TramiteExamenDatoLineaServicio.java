@@ -1,5 +1,6 @@
 package com.utn.frre.cs.examen.receta.spring.receta.examen.servicio;
 
+import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 
@@ -9,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -35,6 +37,7 @@ import com.utn.frre.cs.examen.receta.spring.receta.examen.repositorio.TramiteExa
  * @version 1.0
  */
 @RestController
+@CrossOrigin(origins="http://localhost:4200")
 @RequestMapping("/api/examen/estudioSolicitado")
 public class TramiteExamenDatoLineaServicio {
 
@@ -51,8 +54,8 @@ public class TramiteExamenDatoLineaServicio {
 			 * 
 			 */
 			@GetMapping()
-			public Page<TramiteExamenDatoLinea> getPage(Pageable pageable) {
-				return tramiteExamenDatoLineaRepositorio.findAll(pageable);
+			public List<TramiteExamenDatoLinea> getPage(Pageable pageable) {
+				return tramiteExamenDatoLineaRepositorio.findAll();
 			}
 			
 			/**
