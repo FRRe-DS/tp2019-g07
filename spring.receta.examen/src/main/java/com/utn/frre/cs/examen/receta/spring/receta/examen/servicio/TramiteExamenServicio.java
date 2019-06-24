@@ -5,6 +5,7 @@ import java.net.URI;
 import java.util.List;
 import java.util.Optional;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 import javax.validation.Valid;
 
@@ -62,7 +63,7 @@ public class TramiteExamenServicio  {
 		 * 
 		 */
 		@GetMapping()
-		public List<TramiteExamen> getPage(Pageable pageable) {
+		public List<TramiteExamen> getAllTramite() {
 			return tramiteExamenRepositorio.findAll();
 		}
 		
@@ -77,6 +78,20 @@ public class TramiteExamenServicio  {
 				return ResponseEntity.ok(opt.get());
 			return ResponseEntity.notFound().build();
 		}
+		
+		/**
+		 * retorna los  TramiteExamen correspondientes a un medico segun su id
+		 * 
+		 */
+		@GetMapping("/medico/{id}")
+		public List<TramiteExamen> getTramiteMedico(@PathVariable int id) {
+			List<TramiteExamen> misTramites = tramiteExamenRepositorio.findAll();
+			List<TramiteExamen> misTramitesMed = misTramites.stream()
+					.filter(x -> x.getIdePersonalMed() == id)
+					.collect(Collectors.toList());
+			return misTramitesMed;
+		}
+		
 		
 		/**
 		 * crea un TramiteExamen 

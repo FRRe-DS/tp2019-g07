@@ -20,6 +20,11 @@ export class TramiteService {
         return this.httpService.get<Tramite[]>(`${this.API_URI}/solicitud`);
     }
 
+    getAllTramitesMedico(id: number) {
+        return this.httpService.get<Tramite[]>(`${this.API_URI}/solicitud/medico/${id}`);
+    }
+
+
     getTramite(id: number) {
         return this.httpService.get(`${this.API_URI}/solicitud/${id}`);
     }

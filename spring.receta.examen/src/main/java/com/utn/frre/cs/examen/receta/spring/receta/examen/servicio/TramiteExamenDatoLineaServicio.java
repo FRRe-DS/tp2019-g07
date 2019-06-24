@@ -50,7 +50,7 @@ public class TramiteExamenDatoLineaServicio {
 			
 			
 			/**
-			 * retorna una todas las TramiteExamenDatoLinea(estudios solicitados) que tiene  la BD
+			 * retorna un a todas las TramiteExamenDatoLinea(estudios solicitados) que tiene  la BD
 			 * 
 			 */
 			@GetMapping()
