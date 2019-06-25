@@ -24,6 +24,9 @@ export class TramiteService {
         return this.httpService.get<Tramite[]>(`${this.API_URI}/solicitud/medico/${id}`);
     }
 
+    getAllEstudioFromTramiteMedico(idTramite: number) {
+        return this.httpService.get<Estudio[]>(`${this.API_URI}/solicitud/${idTramite}/estudiosSolicitados`);
+    }
 
     getTramite(id: number) {
         return this.httpService.get(`${this.API_URI}/solicitud/${id}`);

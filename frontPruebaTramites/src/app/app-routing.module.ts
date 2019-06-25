@@ -12,7 +12,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent},
   { path: 'welcome/:nombre', component: WelcomeComponent},
   { path: 'mistramites', component: TramiteComponent},
-  { path: 'mistramites/:idtramite/solicitud', component: EstudioComponent},
+  { path: 'mistramites/misestudios/:id', component: EstudioComponent},
 
   { path: '**', component: ErrorComponent}
 

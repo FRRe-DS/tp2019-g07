@@ -14,29 +14,33 @@ import { Estudio } from '../Modelo/estudio';
 export class EstudioService {
 
     API_URI = 'http://localhost:8087/api/examen/estudioSolicitado';
+    API_URI2 = 'http://localhost:8087/api/examen/solicitud';
 
     constructor(private httpService: HttpClient) { } // inyeccion de dependecia
 
     getAllEstudio() {
-        return this.httpService.get<Estudio[]>(`${this.API_URI}/solicitud`);
+        return this.httpService.get<Estudio[]>(`${this.API_URI}`);
     }
 
+    getAllEstudioFromTramiteMedico(idTramite: number) {
+        return this.httpService.get<Estudio[]>(`${this.API_URI2}/${idTramite}/estudiosSolicitados`);
+    }
     
-    getTramite(id: number) {
-        return this.httpService.get(`${this.API_URI}/solicitud/${id}`);
+    getEstudio(id: number) {
+        return this.httpService.get<Estudio>(`${this.API_URI}/${id}`);
     }
 
-    saveTramite(tramite: Tramite){
-        return this.httpService.post(`${this.API_URI}/solicitud`, tramite);
+    saveEstudio(estudio: Estudio){
+        return this.httpService.post(`${this.API_URI}`, estudio);
     }
 
-    updateTramite(updateTramite: Tramite) {
-        return this.httpService.put(`${this.API_URI}/solicitud`, updateTramite);
+    updateEstudio(updateEstudio: Estudio) {
+        return this.httpService.put(`${this.API_URI}`, updateEstudio);
     }
 
     // no creo que sea necesario un DELETE, pero lo dejo por las dudas.
-    deleteTramite(id: number){
-        return this.httpService.delete(`${this.API_URI}/solicitud/${id}`);
+    deleteEstudio(id: number){
+        return this.httpService.delete(`${this.API_URI}/${id}`);
     }
 
     getDetalleTramite(id: number) {

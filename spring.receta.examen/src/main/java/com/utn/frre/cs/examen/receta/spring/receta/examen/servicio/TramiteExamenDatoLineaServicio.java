@@ -54,7 +54,7 @@ public class TramiteExamenDatoLineaServicio {
 			 * 
 			 */
 			@GetMapping()
-			public List<TramiteExamenDatoLinea> getPage(Pageable pageable) {
+			public List<TramiteExamenDatoLinea> getAllEstudios() {
 				return tramiteExamenDatoLineaRepositorio.findAll();
 			}
 			

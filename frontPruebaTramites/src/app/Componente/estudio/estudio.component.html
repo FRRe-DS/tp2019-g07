@@ -8,15 +8,16 @@
         <th>Resultado</th>
         <th>Estado</th>
         <th>Fecha del Estudio</th>
+        <th>Fecha del Estudio</th>
        </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let e of estudios  ">
-         <th>{{e.ide_TramiteExamenDatoLine}}</th>
-        <th>{{t.resultadoExamen}}</th>
-        <th>{{t.fechaEstudio | date:"dd/MM/yyyy HH:mm" | uppercase}}</th>
-        <th>{{t.estadoEstudio}}</th>
-        
+      <tr *ngFor="let e of estudios, let c of categoriaDatoExamen  ">
+         <th>{{e.ide_TramiteExamenDatoLinea}}</th>
+        <th>{{e.resultadoExamen}}</th>
+        <th>{{e.estadoEstudio}}</th>
+        <th>{{e.fechaEstudio | date:"dd/MM/yyyy HH:mm" | uppercase}}</th>
+        <th>{{c.descripcionDato}}</th>
      </tr>
     </tbody>
 </table>
