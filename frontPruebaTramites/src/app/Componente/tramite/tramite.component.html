@@ -16,7 +16,7 @@
         <th>{{t.idePersonalMed}}</th>
         <th>{{t.fecExamen | date:"dd/MM/yyyy HH:mm" | uppercase}}</th>
         <th>{{t.id_internacion}}</th>
-        <th><a [routerLink]="">Agregar Estudio</a> | <a [routerLink]="['misestudios', t.ideSolicitudExamen]">Detalles de Estudio</a></th>
+        <th><a [routerLink]="['misnuevosestudios', t.ideSolicitudExamen]">Agregar Estudio</a> | <a [routerLink]="['misestudios', t.ideSolicitudExamen]">Detalles de Estudio</a></th>
      </tr>
     </tbody>
 </table>
