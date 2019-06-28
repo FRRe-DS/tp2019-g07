@@ -14,6 +14,8 @@ import { TramiteService } from './Servicio/tramite.service';
 import { HttpClientModule } from '@angular/common/http';
 import { EstudioComponent } from './Componente/estudio/estudio.component';
 import { EstudioService } from './Servicio/estudio.service';
+import { RecetaComponent } from './Componente/receta/receta.component';
+import { FormularioEstudioComponent } from './Componente/formulario-estudio/formulario-estudio.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { EstudioService } from './Servicio/estudio.service';
     MenuComponent,
     FooterComponent,
     TramiteComponent,
-    EstudioComponent
+    EstudioComponent,
+    RecetaComponent,
+    FormularioEstudioComponent
   ],
   imports: [
     BrowserModule,

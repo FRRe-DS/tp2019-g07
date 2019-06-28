@@ -5,6 +5,7 @@ import { WelcomeComponent } from './Componente/welcome/welcome.component';
 import { ErrorComponent } from './Componente/error/error.component';
 import { TramiteComponent } from './Componente/tramite/tramite.component';
 import {EstudioComponent } from './Componente/estudio/estudio.component'
+import { FormularioEstudioComponent } from './Componente/formulario-estudio/formulario-estudio.component';
 
 // welcome
 const routes: Routes = [
@@ -13,7 +14,7 @@ const routes: Routes = [
   { path: 'welcome/:nombre', component: WelcomeComponent},
   { path: 'mistramites', component: TramiteComponent},
   { path: 'mistramites/misestudios/:id', component: EstudioComponent},
-
+  { path: 'mistramites/misnuevosestudios/:id', component: FormularioEstudioComponent},
   { path: '**', component: ErrorComponent}
 
 ];

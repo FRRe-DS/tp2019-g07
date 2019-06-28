@@ -1,4 +1,5 @@
 import { Tramite } from './tramite';
+import { CategoriaExamen } from './categoriaexamen';
 
 export class Estudio {
 
@@ -7,4 +8,5 @@ export class Estudio {
     resultadoExamen?: string;
     estadoEstudio?: string;
     fechaEstudio?: Date;
+    categoriaExamen?: CategoriaExamen;
 }
