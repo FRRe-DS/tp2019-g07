@@ -1,0 +1,59 @@
+﻿@page
+@model historiasClinicas.Pages.Internaciones.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Internacion Paciente Fulano</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="InternacPaciente.Id_expediente" class="control-label"></label>
+                <input asp-for="InternacPaciente.Id_expediente" class="form-control" />
+                <span asp-validation-for="InternacPaciente.Id_expediente" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="InternacPaciente.Id_personal" class="control-label"></label>
+                <input asp-for="InternacPaciente.Id_personal" class="form-control" />
+                <span asp-validation-for="InternacPaciente.Id_personal" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="InternacPaciente.Fecha_ingreso" class="control-label"></label>
+                <input asp-for="InternacPaciente.Fecha_ingreso" class="form-control" />
+                <span asp-validation-for="InternacPaciente.Fecha_ingreso" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="InternacPaciente.Imp_diagnostica" class="control-label"></label>
+                <input asp-for="InternacPaciente.Imp_diagnostica" class="form-control" />
+                <span asp-validation-for="InternacPaciente.Imp_diagnostica" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="InternacPaciente.Tratamiento" class="control-label"></label>
+                <input asp-for="InternacPaciente.Tratamiento" class="form-control" />
+                <span asp-validation-for="InternacPaciente.Tratamiento" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="InternacPaciente.HistoriaClinicaGral" class="control-label"></label>
+                <input asp-for="InternacPaciente.HistoriaClinicaGral" class="form-control" />
+                <span asp-validation-for="InternacPaciente.HistoriaClinicaGral" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

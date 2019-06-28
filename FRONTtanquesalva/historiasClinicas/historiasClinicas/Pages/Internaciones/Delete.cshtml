@@ -1,0 +1,58 @@
+﻿@page
+@model historiasClinicas.Pages.Internaciones.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Internacion Paciente Fulano</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.InternacPaciente.Id_expediente)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.InternacPaciente.Id_expediente)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.InternacPaciente.Id_personal)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.InternacPaciente.Id_personal)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.InternacPaciente.Fecha_ingreso)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.InternacPaciente.Fecha_ingreso)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.InternacPaciente.Imp_diagnostica)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.InternacPaciente.Imp_diagnostica)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.InternacPaciente.Tratamiento)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.InternacPaciente.Tratamiento)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.InternacPaciente.HistoriaClinicaGral)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.InternacPaciente.HistoriaClinicaGral)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="InternacPaciente.Id_internacion" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-page="./Index">Back to List</a>
+    </form>
+</div>
