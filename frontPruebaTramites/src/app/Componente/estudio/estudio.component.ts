@@ -3,6 +3,7 @@ import { Estudio } from 'src/app/Modelo/estudio';
 import { EstudioService } from 'src/app/Servicio/estudio.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { CategoriaExamen } from 'src/app/Modelo/categoriaexamen';
+
 @Component({
   selector: 'app-estudio',
   templateUrl: './estudio.component.html',
@@ -16,7 +17,7 @@ export class EstudioComponent implements OnInit {
 
   constructor(private estudioServicio: EstudioService, private router: Router, private activateRoute: ActivatedRoute) { }
 
-  
+
 
 
 
@@ -25,13 +26,13 @@ export class EstudioComponent implements OnInit {
     const params = this.activateRoute.snapshot.params;
     if (params.id) {
       this.estudioServicio.getAllEstudioFromTramiteMedico(params.id)
-      .subscribe(
-        response => {
-          console.log(response);
-          this.estudios = response;
-          
-        }
-      );
+        .subscribe(
+          response => {
+            console.log(response);
+            this.estudios = response;
+
+          }
+        );
     }
 
 

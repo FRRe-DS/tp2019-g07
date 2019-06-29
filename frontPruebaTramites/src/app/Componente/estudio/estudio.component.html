@@ -5,7 +5,6 @@
   <thead>
       <tr>
         <th>Id del Estudio</th>
-        <th>Tipo de examen</th>
         <th>Resultado</th>
         <th>Estado</th>
         <th>Fecha del Estudio</th>
@@ -14,12 +13,12 @@
        </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let e of estudios, ">
+      <tr *ngFor="let e of estudios ">
          <th>{{e.ide_TramiteExamenDatoLinea}}</th>
-         <th>{{e.categoriaDatoExamen.descripcionDato}}</th>
-        <th>{{e.resultadoExamen}}</th>
+         <th>{{e.resultadoExamen}}</th>
         <th>{{e.estadoEstudio}}</th>
         <th>{{e.fechaEstudio | date:"dd/MM/yyyy HH:mm" | uppercase}}</th>
+        <th>Borrar | actualizar</th>
         
         
      </tr>

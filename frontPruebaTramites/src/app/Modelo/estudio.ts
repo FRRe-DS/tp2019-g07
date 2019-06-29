@@ -3,7 +3,8 @@ import { CategoriaExamen } from './categoriaexamen';
 
 export class Estudio {
 
-    ideTramiteExamenDatoLinea?: number;
+// tslint:disable-next-line: variable-name
+    ide_TramiteExamenDatoLinea?: number;
     tramite?: Tramite;
     resultadoExamen?: string;
     estadoEstudio?: string;

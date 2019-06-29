@@ -32,7 +32,7 @@ public class CategoriaDatosExamen {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "COD_DATO")
+	@Column(name = "cod_dato")
 	private Long cod_dato;
 
 	/**
