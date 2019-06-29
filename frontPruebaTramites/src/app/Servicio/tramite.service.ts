@@ -12,7 +12,9 @@ import { Estudio } from '../Modelo/estudio';
 })
 export class TramiteService {
 
-    API_URI = 'http://localhost:8087/api/examen';
+    API_URI = 'http://192.168.1.17:8087/api/examen';
+     
+ 
 
     constructor(private httpService: HttpClient) { } // inyeccion de dependecia
 

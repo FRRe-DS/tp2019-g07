@@ -43,7 +43,7 @@ import com.utn.frre.cs.examen.receta.spring.receta.examen.servicio.excepcion.Tra
  * @version 1.0
  */
 @RestController
-@CrossOrigin(origins="http://localhost:4200")
+@CrossOrigin(origins= "*")
 @RequestMapping("/api/examen/solicitud")
 public class TramiteExamenServicio  {
 
