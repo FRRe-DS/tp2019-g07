@@ -2,6 +2,7 @@
 
 export class CategoriaExamen {
 
-    codDato?: number;
+// tslint:disable-next-line: variable-name
+    cod_dato?: number;
     descripcionDato?: string;
 }

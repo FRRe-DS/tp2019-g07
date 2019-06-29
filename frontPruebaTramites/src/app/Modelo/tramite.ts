@@ -4,7 +4,7 @@ import {Title} from '@angular/platform-browser';
 
 
 export class Tramite {
-    id?: number;
+    ideSolicitudExamen?: number;
     idePersonalMed?: number;
     fecExamen?: Date;
     idInternacion?: number;

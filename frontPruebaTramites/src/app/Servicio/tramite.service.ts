@@ -31,10 +31,10 @@ export class TramiteService {
     }
 
     getTramite(id: number) {
-        return this.httpService.get(`${this.API_URI}/solicitud/${id}`);
+        return this.httpService.get<Tramite>(`${this.API_URI}/solicitud/${id}`);
     }
 
-    saveTramite(tramite: Tramite){
+    saveTramite(tramite: Tramite) {
         return this.httpService.post(`${this.API_URI}/solicitud`, tramite);
     }
 
@@ -49,6 +49,10 @@ export class TramiteService {
 
     getDetalleTramite(id: number) {
         return this.httpService.get<Estudio[]>(`${this.API_URI}/solicitud/${id}/estudiosSolicitados`);
+    }
+
+    saveUnEstudioDeTramite(id: number, e: Estudio) {
+        return this.httpService.post(`${this.API_URI}/solicitud/${id}/nuevoEstudioSolicitado`, e);
     }
 
 }

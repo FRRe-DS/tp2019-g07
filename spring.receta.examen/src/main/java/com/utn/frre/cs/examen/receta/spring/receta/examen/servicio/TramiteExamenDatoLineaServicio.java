@@ -37,7 +37,7 @@ import com.utn.frre.cs.examen.receta.spring.receta.examen.repositorio.TramiteExa
  * @version 1.0
  */
 @RestController
-@CrossOrigin(origins="http://localhost:4200")
+@CrossOrigin(origins= "*")
 @RequestMapping("/api/examen/estudioSolicitado")
 public class TramiteExamenDatoLineaServicio {
 

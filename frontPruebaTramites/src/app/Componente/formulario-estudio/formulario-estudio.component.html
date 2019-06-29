@@ -1,29 +1,29 @@
-<div class="col-md-4 offset-md-2">
+<div class="col-md-4 offset-md-4">
   <div class="card">
     <div class="card-body">
       <form action="">
           <div class="form-group">
-              <input type="text" name="title" [(ngModel)]="miestudio.algo" placeholder="veremos" class="form-control" autofocus>
+              <textarea name="descripcion del estudio"  [(ngModel)]="miCategoriaExamen.descripcionDato" placeholder="descripcion de estudio" class="form-control" autofocus></textarea>
             </div>
         <div class="form-group">
-          <input type="text" name="title" [(ngModel)]="miestudio.algo" placeholder="veremos" class="form-control" autofocus>
+          <input type="text" name="estado de estudio" [(ngModel)]="miEstudio.estadoEstudio" rows="2" placeholder="Ingrese urgencia estudio" class="form-control"autofocus>         
         </div>
         <div class="form-group">
-          <textarea name="description" [(ngModel)]="miestudio.algo" rows="2" placeholder="veremos" class="form-control"></textarea>
-        </div>
-        <button class="btn btn-success btn-block" (click)="edit ? updateGame() : saveNewEstudio()">
-          Save
+          <input type="text" name="resultado de estudio" [(ngModel)]="miEstudio.resultadoExamen" placeholder="Ingrese resultado estudio" class="form-control" autofocus>      
+          </div>
+        <button class="btn btn-success btn-block" (click)="saveNewEstudio()">
+          Guardar
         </button>
       </form>
     </div>
   </div>
 </div>
 
-<div class="col-md-4">
+<div class="col-md-4 offset-md-4">
   <div class="card card-body text-center">
-  <img [src]="game.image == '' ? '/assets/noimage.png' : game.image" alt="No Image" class="card-img-top">
-    <h3>{{game.id}}. {{game.title == '' ? 'Game Title' : game.title}}</h3>
-    <p>{{game.description == '' ? 'Write your Descrition' : game.description}}</p>
-    <p>{{game.created_at | date: 'yyyy-MM-dd'}}</p>
+    <h3>{{miCategoriaExamen.descripcionDato == '' ? 'Estudio' : miCategoriaExamen.descripcionDato}}</h3>
+    <p>{{miEstudio.resultadoExamen == '' ? 'El resultado del estudio' : miEstudio.resultadoExamen}}</p>
+    <p>{{miEstudio.estadoEstudio == '' ? 'El estado del estudio' : miEstudio.estadoEstudio}}</p>
+    <p>{{miEstudio.fechaEstudio | date: 'yyyy-MM-dd'}}</p>
   </div>
 </div>
