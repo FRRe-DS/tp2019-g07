@@ -18,7 +18,13 @@
          <th>{{e.resultadoExamen}}</th>
         <th>{{e.estadoEstudio}}</th>
         <th>{{e.fechaEstudio | date:"dd/MM/yyyy HH:mm" | uppercase}}</th>
-        <th>Borrar | actualizar</th>
+        <th><button class="btn btn-success btn-block" (click)="borrarEstudio(e.ide_TramiteExamenDatoLinea);router.navigate(['mistramites']);">
+          Borrar 
+        </button></th>
+        <th> <button class="btn btn-success btn-block" (click)= "router.navigate(['mistramites']);" >
+          Actualizar
+        </button></th>
+        
         
         
      </tr>

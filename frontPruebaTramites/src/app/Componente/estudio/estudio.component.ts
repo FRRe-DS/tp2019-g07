@@ -38,4 +38,17 @@ export class EstudioComponent implements OnInit {
 
   }
 
+  borrarEstudio(id: number) {
+    this.estudioServicio.deleteEstudio(id)
+      .subscribe(
+        response => {
+          console.log(response);
+
+        }
+      );
+
+  }
+
+
+
 }
