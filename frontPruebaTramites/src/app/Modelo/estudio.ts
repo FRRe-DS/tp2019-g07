@@ -10,4 +10,6 @@ export class Estudio {
     estadoEstudio?: string;
     fechaEstudio?: Date;
     categoriaExamen?: CategoriaExamen;
+
+
 }

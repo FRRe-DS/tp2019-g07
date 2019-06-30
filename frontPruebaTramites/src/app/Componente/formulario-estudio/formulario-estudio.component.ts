@@ -59,7 +59,7 @@ export class FormularioEstudioComponent implements OnInit {
         .subscribe(
           res => {
             console.log(res);
-            //this.router.navigate(['/mistramites']);
+            this.router.navigate(['/mistramites']);
           }
         );
     }

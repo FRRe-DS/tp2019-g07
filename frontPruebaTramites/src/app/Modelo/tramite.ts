@@ -8,4 +8,10 @@ export class Tramite {
     idePersonalMed?: number;
     fecExamen?: Date;
     idInternacion?: number;
+
+getIdtram(): number {
+     return this.ideSolicitudExamen;
+ }
+
+
 }
