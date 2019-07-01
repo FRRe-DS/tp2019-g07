@@ -36,7 +36,7 @@ import com.utn.frre.cs.examen.receta.spring.receta.examen.repositorio.TramiteRec
  */
 @RestController
 @CrossOrigin(origins= "*")
-@RequestMapping("api/examen/informacionReceta")
+@RequestMapping("/api/examen/informacionReceta")
 public class TramiteRecetaServicio  {
 
 	// Dependencies -----------------------------------------------------------

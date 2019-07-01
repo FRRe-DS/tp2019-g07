@@ -14,7 +14,7 @@ import { Receta } from '../Modelo/receta';
 
 export class RecetaService {
 
-    API_URI3 = 'http://192.168.1.17:8087/informacionReceta';
+    API_URI3 = 'http://192.168.1.12:8087/api/examen/informacionReceta';
      
 
     constructor(private httpService: HttpClient) { } // inyeccion de dependecia
@@ -24,7 +24,7 @@ export class RecetaService {
     }
 
     getAllRecetaFromTramiteMedico(idReceta: number) {
-        return this.httpService.get<Receta[]>(`${this.API_URI3}/medicos/${idReceta}`);
+        return this.httpService.get<Receta[]>(`${this.API_URI3}/medico/${idReceta}`);
     }
     
     getReceta(id: number) {

@@ -13,8 +13,8 @@ import { Estudio } from '../Modelo/estudio';
 
 export class EstudioService {
 
-    API_URI = 'http://192.168.1.17:8087/api/examen/estudioSolicitado';
-    API_URI2 = 'http://192.168.1.17:8087/api/examen/solicitud';
+    API_URI = 'http://192.168.1.12:8087/api/examen/estudioSolicitado';
+    API_URI2 = 'http://192.168.1.12:8087/api/examen/solicitud';
 
     constructor(private httpService: HttpClient) { } // inyeccion de dependecia
 

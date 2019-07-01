@@ -12,7 +12,7 @@ import { Estudio } from '../Modelo/estudio';
 })
 export class TramiteService {
 
-    API_URI = 'http://192.168.1.17:8087/api/examen';
+    API_URI = 'http://192.168.1.12:8087/api/examen';
      
  
 
