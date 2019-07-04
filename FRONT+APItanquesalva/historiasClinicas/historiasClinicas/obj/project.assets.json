@@ -12940,11 +12940,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\salva\\source\\repos\\historiasClinicas\\historiasClinicas\\historiasClinicas.csproj",
+      "projectUniqueName": "C:\\Users\\salva\\OneDrive\\Desktop\\frontHospital\\tp2019-g07\\FRONT+APItanquesalva\\historiasClinicas\\historiasClinicas\\historiasClinicas.csproj",
       "projectName": "historiasClinicas",
-      "projectPath": "C:\\Users\\salva\\source\\repos\\historiasClinicas\\historiasClinicas\\historiasClinicas.csproj",
+      "projectPath": "C:\\Users\\salva\\OneDrive\\Desktop\\frontHospital\\tp2019-g07\\FRONT+APItanquesalva\\historiasClinicas\\historiasClinicas\\historiasClinicas.csproj",
       "packagesPath": "C:\\Users\\salva\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\salva\\source\\repos\\historiasClinicas\\historiasClinicas\\obj\\",
+      "outputPath": "C:\\Users\\salva\\OneDrive\\Desktop\\frontHospital\\tp2019-g07\\FRONT+APItanquesalva\\historiasClinicas\\historiasClinicas\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

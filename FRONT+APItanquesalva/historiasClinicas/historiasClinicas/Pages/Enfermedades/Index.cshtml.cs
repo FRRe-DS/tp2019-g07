@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using historiasClinicas.Models;
 
-namespace historiasClinicas.Pages.Internaciones
+namespace historiasClinicas.Pages.Enfermedades
 {
     public class IndexModel : PageModel
     {
@@ -18,11 +18,11 @@ namespace historiasClinicas.Pages.Internaciones
             _context = context;
         }
 
-        public IList<InternacPaciente> InternacPaciente { get;set; }
+        public IList<EnfermedadPaciente> EnfermedadPaciente { get;set; }
 
         public async Task OnGetAsync()
         {
-            InternacPaciente = await _context.InternacPacientes.ToListAsync();
+            EnfermedadPaciente = await _context.EnfermedadPacientes.ToListAsync();
         }
     }
 }

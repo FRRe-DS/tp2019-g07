@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using historiasClinicas.Models;
 
-namespace historiasClinicas.Pages.Internaciones
+namespace historiasClinicas.Pages.Enfermedades
 {
     public class EditModel : PageModel
     {
@@ -20,7 +20,7 @@ namespace historiasClinicas.Pages.Internaciones
         }
 
         [BindProperty]
-        public InternacPaciente InternacPaciente { get; set; }
+        public EnfermedadPaciente EnfermedadPaciente { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -29,9 +29,9 @@ namespace historiasClinicas.Pages.Internaciones
                 return NotFound();
             }
 
-            InternacPaciente = await _context.InternacPacientes.FirstOrDefaultAsync(m => m.Id_internacion == id);
+            EnfermedadPaciente = await _context.EnfermedadPacientes.FirstOrDefaultAsync(m => m.IdEnfermedad == id);
 
-            if (InternacPaciente == null)
+            if (EnfermedadPaciente == null)
             {
                 return NotFound();
             }
@@ -45,7 +45,7 @@ namespace historiasClinicas.Pages.Internaciones
                 return Page();
             }
 
-            _context.Attach(InternacPaciente).State = EntityState.Modified;
+            _context.Attach(EnfermedadPaciente).State = EntityState.Modified;
 
             try
             {
@@ -53,7 +53,7 @@ namespace historiasClinicas.Pages.Internaciones
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!InternacPacienteExists(InternacPaciente.Id_internacion))
+                if (!EnfermedadPacienteExists(EnfermedadPaciente.IdEnfermedad))
                 {
                     return NotFound();
                 }
@@ -66,9 +66,9 @@ namespace historiasClinicas.Pages.Internaciones
             return RedirectToPage("./Index");
         }
 
-        private bool InternacPacienteExists(int id)
+        private bool EnfermedadPacienteExists(int id)
         {
-            return _context.InternacPacientes.Any(e => e.Id_internacion == id);
+            return _context.EnfermedadPacientes.Any(e => e.IdEnfermedad == id);
         }
     }
 }

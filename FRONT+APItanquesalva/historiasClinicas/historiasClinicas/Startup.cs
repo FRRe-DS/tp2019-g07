@@ -36,7 +36,8 @@ namespace historiasClinicas
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
-            services.AddDbContext<historiasClinicasContext>(options =>
+            
+            services.AddDbContext<HcContext>(options =>
                     options.UseSqlServer(Configuration.GetConnectionString("historiasClinicasContext")));
         }
 

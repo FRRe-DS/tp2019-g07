@@ -33,3 +33,8 @@ C:\Users\salva\source\repos\historiasClinicas\historiasClinicas\obj\Debug\netcor
 C:\Users\salva\source\repos\historiasClinicas\historiasClinicas\obj\Debug\netcoreapp2.2\Razor\Pages\Internaciones\Details.g.cshtml.cs
 C:\Users\salva\source\repos\historiasClinicas\historiasClinicas\obj\Debug\netcoreapp2.2\Razor\Pages\Internaciones\Edit.g.cshtml.cs
 C:\Users\salva\source\repos\historiasClinicas\historiasClinicas\obj\Debug\netcoreapp2.2\Razor\Pages\Internaciones\Index.g.cshtml.cs
+C:\Users\salva\source\repos\historiasClinicas\historiasClinicas\obj\Debug\netcoreapp2.2\Razor\Pages\Enfermedades\Create.g.cshtml.cs
+C:\Users\salva\source\repos\historiasClinicas\historiasClinicas\obj\Debug\netcoreapp2.2\Razor\Pages\Enfermedades\Delete.g.cshtml.cs
+C:\Users\salva\source\repos\historiasClinicas\historiasClinicas\obj\Debug\netcoreapp2.2\Razor\Pages\Enfermedades\Details.g.cshtml.cs
+C:\Users\salva\source\repos\historiasClinicas\historiasClinicas\obj\Debug\netcoreapp2.2\Razor\Pages\Enfermedades\Edit.g.cshtml.cs
+C:\Users\salva\source\repos\historiasClinicas\historiasClinicas\obj\Debug\netcoreapp2.2\Razor\Pages\Enfermedades\Index.g.cshtml.cs

@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using historiasClinicas.Models;
 
-namespace historiasClinicas.Pages.Internaciones
+namespace historiasClinicas.Pages.Enfermedades
 {
     public class DetailsModel : PageModel
     {
@@ -18,7 +18,7 @@ namespace historiasClinicas.Pages.Internaciones
             _context = context;
         }
 
-        public InternacPaciente InternacPaciente { get; set; }
+        public EnfermedadPaciente EnfermedadPaciente { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -27,9 +27,9 @@ namespace historiasClinicas.Pages.Internaciones
                 return NotFound();
             }
 
-            InternacPaciente = await _context.InternacPacientes.FirstOrDefaultAsync(m => m.Id_internacion == id);
+            EnfermedadPaciente = await _context.EnfermedadPacientes.FirstOrDefaultAsync(m => m.IdEnfermedad == id);
 
-            if (InternacPaciente == null)
+            if (EnfermedadPaciente == null)
             {
                 return NotFound();
             }

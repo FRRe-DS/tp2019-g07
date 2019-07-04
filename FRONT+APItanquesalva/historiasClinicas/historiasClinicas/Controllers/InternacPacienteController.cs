@@ -4,30 +4,38 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using historiasClinicas.Models;
-using historiasClinicas.Migrations;
+
 
 namespace historiasClinicas.Controllers
-{   /*
-    [Route("api/InternacPac")]
+{   
+    [Route("api/internacPac")]
     [ApiController]
     public class InternacPacienteController : ControllerBase
     {
-        private readonly historiasClinicasContextModelSnapshot _context;
+        private readonly HcContext _context;
 
-        public InternacPacienteController(historiasClinicasContextModelSnapshot context)
+        public InternacPacienteController(HcContext context)
         {
             _context = context;
 
+            if (_context.InternacPacientes.Count() == 0)
+            {
+                // Create a new TodoItem if collection is empty,
+                // which means you can't delete all TodoItems.
+                _context.InternacPacientes.Add(new InternacPaciente { Tratamiento = "Item1" });
+                _context.SaveChanges();
+            }
+
         }
 
-        // GET: api/internacPac
+        // GET: api/InternacPac
         [HttpGet]
         public async Task<ActionResult<IEnumerable<InternacPaciente>>> GetInternacPacientes()
         {
             return await _context.InternacPacientes.ToListAsync();
         }
 
-        // GET: api/internacPac/(id)
+        // GET: api/InternacPac/(id)
         [HttpGet("{id}")]
         public async Task<ActionResult<InternacPaciente>> GetInternacPaciente(int id)
         {
@@ -41,7 +49,7 @@ namespace historiasClinicas.Controllers
             return internacPac;
         }
 
-        // POST: api/internacPac
+        // POST: api/InternacPac
         [HttpPost]
         public async Task<ActionResult<InternacPaciente>> PostEltoAntEvaluar(InternacPaciente item)
         {
@@ -66,7 +74,7 @@ namespace historiasClinicas.Controllers
             return NoContent();
         }
 
-        // DELETE: api/internacPac/(id)
+        // DELETE: api/InternacPac/(id)
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteInternacPac(int id)
         {
@@ -82,5 +90,5 @@ namespace historiasClinicas.Controllers
 
             return NoContent();
         }
-    }   */
+    }   
 }

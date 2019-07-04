@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using historiasClinicas.Models;
 
-namespace historiasClinicas.Pages.Internaciones
+namespace historiasClinicas.Pages.Enfermedades
 {
     public class CreateModel : PageModel
     {
@@ -24,7 +24,7 @@ namespace historiasClinicas.Pages.Internaciones
         }
 
         [BindProperty]
-        public InternacPaciente InternacPaciente { get; set; }
+        public EnfermedadPaciente EnfermedadPaciente { get; set; }
 
         public async Task<IActionResult> OnPostAsync()
         {
@@ -33,7 +33,7 @@ namespace historiasClinicas.Pages.Internaciones
                 return Page();
             }
 
-            _context.InternacPacientes.Add(InternacPaciente);
+            _context.EnfermedadPacientes.Add(EnfermedadPaciente);
             await _context.SaveChangesAsync();
 
             return RedirectToPage("./Index");

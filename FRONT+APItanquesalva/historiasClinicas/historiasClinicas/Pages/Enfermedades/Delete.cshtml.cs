@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using historiasClinicas.Models;
 
-namespace historiasClinicas.Pages.Internaciones
+namespace historiasClinicas.Pages.Enfermedades
 {
     public class DeleteModel : PageModel
     {
@@ -19,7 +19,7 @@ namespace historiasClinicas.Pages.Internaciones
         }
 
         [BindProperty]
-        public InternacPaciente InternacPaciente { get; set; }
+        public EnfermedadPaciente EnfermedadPaciente { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -28,9 +28,9 @@ namespace historiasClinicas.Pages.Internaciones
                 return NotFound();
             }
 
-            InternacPaciente = await _context.InternacPacientes.FirstOrDefaultAsync(m => m.Id_internacion == id);
+            EnfermedadPaciente = await _context.EnfermedadPacientes.FirstOrDefaultAsync(m => m.IdEnfermedad == id);
 
-            if (InternacPaciente == null)
+            if (EnfermedadPaciente == null)
             {
                 return NotFound();
             }
@@ -44,11 +44,11 @@ namespace historiasClinicas.Pages.Internaciones
                 return NotFound();
             }
 
-            InternacPaciente = await _context.InternacPacientes.FindAsync(id);
+            EnfermedadPaciente = await _context.EnfermedadPacientes.FindAsync(id);
 
-            if (InternacPaciente != null)
+            if (EnfermedadPaciente != null)
             {
-                _context.InternacPacientes.Remove(InternacPaciente);
+                _context.EnfermedadPacientes.Remove(EnfermedadPaciente);
                 await _context.SaveChangesAsync();
             }
 

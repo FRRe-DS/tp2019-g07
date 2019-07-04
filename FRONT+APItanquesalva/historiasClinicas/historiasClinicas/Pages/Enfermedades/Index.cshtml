@@ -1,0 +1,60 @@
+﻿@page
+@model historiasClinicas.Pages.Enfermedades.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Enfermedades de Pacientes</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.EnfermedadPaciente[0].Enfermedad)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EnfermedadPaciente[0].Edad)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EnfermedadPaciente[0].Fecha_aprox)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EnfermedadPaciente[0].Secuela)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EnfermedadPaciente[0].HistoriaClinicaGral)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.EnfermedadPaciente) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Enfermedad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Edad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fecha_aprox)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Secuela)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HistoriaClinicaGral)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.IdEnfermedad">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.IdEnfermedad">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.IdEnfermedad">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
