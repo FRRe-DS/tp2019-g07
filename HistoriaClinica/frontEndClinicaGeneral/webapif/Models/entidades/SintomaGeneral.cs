@@ -1,0 +1,18 @@
+﻿using System;
+
+
+namespace webapif.Models.entidades
+{ /// <summary>
+  /// Clase que registra síntomas generales del cuerpo humano
+  /// </summary>
+    public class SintomaGeneral
+    {
+        public virtual int idSintomaGeneral { get; set; } // clave primaria
+     
+        public virtual int idExpediente { get; set; } // clave foranea que viene de Historia Clinica del Paciente
+        public virtual string Sintoma { get; set; }//astenia,adinina,fiebre,perida de peso
+
+        public virtual string valoracion { get; set; } //  descripcion de resultado de padecimento
+        public virtual string observacion { get; set; } //  observaciones adicionales sobre el padecimiento
+    }
+}
