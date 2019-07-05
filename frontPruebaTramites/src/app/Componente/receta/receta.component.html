@@ -1,3 +1,29 @@
-<p>
-  receta works!
-</p>
+<h1>Ultimas Recetas emitidas</h1>
+
+<div class="container"> 
+<table class="table">
+  <thead>
+      <tr>
+        <th>Ide Receta</th>
+        <th>Id Medico</th>
+        <th>Fecha inicio medicacion</th>
+        <th>Id Internacion</th>
+        <th>ide Med.</th>
+        <th>ide Presentacion</th>
+        <th>Descripcion de dosis</th>
+       </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let r of recetas  ">
+         <th>{{r.ide_receta}}</th>
+        <th>{{r.ide_personal_med}}</th>
+        <th>{{r.fecha_inicio_med | date:"dd/MM/yyyy HH:mm" | uppercase}}</th>
+        <th>{{r.id_internacion}}</th>
+        <th>{{r.ide_med}}</th>
+        <th>{{r.ide_presentacion_med}}</th>
+        <th>{{r.descripcionDosis}}</th>
+        <th><a [routerLink]="['**']">Detalles</a> </th>
+     </tr>
+    </tbody>
+</table>
+</div>

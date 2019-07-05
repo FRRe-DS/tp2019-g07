@@ -14,7 +14,7 @@ import { Receta } from '../Modelo/receta';
 
 export class RecetaService {
 
-    API_URI3 = 'http://192.168.1.12:8087/api/examen/informacionReceta';
+    API_URI3 = 'http://localhost:8087/api/examen/informacionReceta';
      
 
     constructor(private httpService: HttpClient) { } // inyeccion de dependecia
