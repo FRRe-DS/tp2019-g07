@@ -1,0 +1,121 @@
+{
+  "exploraciongeneral": [
+    {
+      "idExploracionGeneral": 1,
+      "idExpediente": 1234,
+      "EdoConciencia": true,
+      "marcha":"normal",
+      "hidratacion": false,
+      "coloracion":"adecuada",
+      "valoracion":"buen estado",
+      "observacion":""
+    },
+    {
+      "idExploracionGeneral": 2,
+      "idExpediente": 1234,
+      "EdoConciencia": false,
+      "marcha":"normal",
+      "hidratacion": true,
+      "coloracion":"palido",
+      "valoracion":"buen estado",
+      "observacion":""
+
+    },
+    {
+      "idExploracionGeneral": 3,
+      "idExpediente": 9876,
+      "EdoConciencia": true,
+      "marcha":"normal",
+      "hidratacion": false,
+      "coloracion":"color",
+      "valoracion":"buen estado",
+      "observacion":""
+
+    }
+  ],
+  "exploracionregional": [
+    {
+      "idExploracionRegional": 1,
+      "idExpediente": 1234,
+      "Region": "cabeza",
+      "elemento":"normal",
+      "estado": false,
+      "valoracion":"buen estado",
+      "observacion":""
+
+    },
+    {
+      "idExploracionRegional": 2,
+      "idExpediente": 9876,
+      "Region": "cabeza",
+      "elemento":"normal",
+      "estado": false,
+      "valoracion":"buen estado",
+      "observacion":""
+
+    }
+  ],
+  "padecimientoactual": [
+    {
+      "idPadecimiento": 1,
+      "idExpediente": 1234,
+      "descripcion":"normal",
+      "valoracion":"buen estado",
+      "observacion":""
+
+    },
+    {
+      "idPadecimiento": 2,
+      "idExpediente": 9876,
+      "descripcion":"normal",
+      "valoracion":"buen estado",
+      "observacion":""
+
+    }
+  ],
+  "signovital": [
+    {
+      "idSignoVital": 1,
+      "idExpediente": 1234,
+      "ta":"23",
+      "fa":"34",
+      "temperatura":"37",
+      "peso":"80",
+      "talla":"49",
+      "resultado":"buen estado",
+      "observacion":""
+
+    },
+    {
+      "idSignoVital": 2,
+      "idExpediente": 9876,
+      "ta":"23",
+      "fa":"34",
+      "temperatura":"37",
+      "peso":"80",
+      "talla":"49",
+      "resultado":"buen estado",
+      "valoracion":"buen estado",
+      "observacion":""
+
+    }
+  ],
+  "sintomageneral": [
+    {
+      "idSintomaGeneral": 1,
+      "idExpediente": 1234,
+      "sintoma":"fiebre",
+      "valoracion":"buen estado",
+      "observacion":""
+
+    },
+    {
+      "idSintomaGeneral": 2,
+      "idExpediente": 9876,
+      "sintoma":"bronquitis",
+      "valoracion":"mala",
+      "observacion":""
+
+    }
+  ]
+}
